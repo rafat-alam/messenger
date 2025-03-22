@@ -224,4 +224,4 @@ async function repeatFunction() {
   let res = await fetch_get(url);
   console.log(res.data);
 }
-setInterval(repeatFunction, 30000);
+setInterval(repeatFunction, 300000);
