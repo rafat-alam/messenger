@@ -1,3 +1,2 @@
-# messenger
-Messenger Backend
+# Messenger Backend
 # Website : https://messenger-rudj.onrender.com/
