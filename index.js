@@ -10,6 +10,11 @@
 // 9. no data loss on refresh
 // 10. logout
 
+// Random Traffic Urls
+let baseUrl = "https://messenger-rudj.onrender.com";
+let baseUrl1 = "http://localhost:6777";
+let axios = require('axios');
+
 // Setting Express
 const express = require("express");
 const app = express();
@@ -39,6 +44,15 @@ const connection = mysql.createConnection({
   database: 'sql12768940',
   password: '8R8PaVTbeG'
 });
+
+async function fetch_get(url) {
+  try {
+    let res = await axios.get(url);
+    return res;
+  } catch(e) {
+    return e;
+  }
+}
 
 // Setting EJS
 app.set("view engine", "ejs");
@@ -83,6 +97,11 @@ app.post("/signup", (req, res) => {
       res.send("success");
     }
   });
+});
+
+// Random Traffic
+app.get("/update", (req, res) => {
+  res.send("Server running check every 5 minutes.");
 });
 
 // Send Room UUID
@@ -200,7 +219,9 @@ app.listen(port, () => {
   connection.query(q2, (err, res) => {});
 });
 
-function repeatFunction() {
-  console.log("Server running check every 5 minute");
+async function repeatFunction() {
+  let url = `${baseUrl}/update`;
+  let res = await fetch_get(url);
+  console.log(res.data);
 }
-setInterval(repeatFunction, 300000);
+setInterval(repeatFunction, 1000);
