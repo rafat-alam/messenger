@@ -199,3 +199,8 @@ app.listen(port, () => {
     );`;
   connection.query(q2, (err, res) => {});
 });
+
+function repeatFunction() {
+  console.log("Server running check every 5 minute");
+}
+setInterval(repeatFunction, 300000);
