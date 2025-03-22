@@ -26,12 +26,18 @@ const { v4: uuidv4 } = require('uuid');
 // Port Number
 const port = 6777;
 
+
+// Host: sql12.freesqldatabase.com
+// Database name: sql12768940
+// Database user: sql12768940
+// Database password: 8R8PaVTbeG
+// Port number: 3306
 // SQL Connection
 const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  database: 'chat',
-  password: '1122'
+  host: 'sql12.freesqldatabase.com',
+  user: 'sql12768940',
+  database: 'sql12768940',
+  password: '8R8PaVTbeG'
 });
 
 // Setting EJS
