@@ -198,7 +198,7 @@ app.put("/msg/:id", (req, res) => {
 
 // Listening on Port for Request
 app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+  console.log(`Server is running on ${baseUrl}:${port}`);
 
   // Creating Users table
   let q1 = `CREATE TABLE IF NOT EXISTS users (
