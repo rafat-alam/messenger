@@ -101,7 +101,7 @@ app.post("/signup", (req, res) => {
 
 // Random Traffic
 app.get("/update", (req, res) => {
-  res.send("Server running check every 5 minutes.");
+  res.send("Server running check every minute.");
 });
 
 // Send Room UUID
@@ -223,5 +223,14 @@ async function repeatFunction() {
   let url = `${baseUrl}/update`;
   let res = await fetch_get(url);
   console.log(res.data);
+  connection = mysql.createConnection({
+    host: 'sql12.freesqldatabase.com',
+    user: 'sql12768940',
+    database: 'sql12768940',
+    password: '8R8PaVTbeG'
+  });
+  if(connection) {
+    console.log("Database Connection : OK");
+  }
 }
-setInterval(repeatFunction, 300000);
+setInterval(repeatFunction, 60000);
