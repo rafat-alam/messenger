@@ -38,7 +38,7 @@ const port = 6777;
 // Database password: 8R8PaVTbeG
 // Port number: 3306
 // SQL Connection
-const connection = mysql.createConnection({
+let connection = mysql.createConnection({
   host: 'sql12.freesqldatabase.com',
   user: 'sql12768940',
   database: 'sql12768940',
